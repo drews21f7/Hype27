@@ -9,9 +9,15 @@
 import UIKit
 
 class HypeTableViewController: UITableViewController, UITextFieldDelegate {
+    
+    var refresh: UIRefreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        refresh.attributedTitle = NSAttributedString(string: "Pull to see new Hype")
+        refresh.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        self.tableView.addSubview(refresh)
+        
         loadData()
     }
     
@@ -47,11 +53,12 @@ class HypeTableViewController: UITableViewController, UITextFieldDelegate {
     }
     //Helper function
     
-    func loadData() {
+    @objc func loadData() {
         HypeController.sharedInstance.fetchDemHypes { (success) in
             if success {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.refresh.endRefreshing()
                 }
             }
         }
