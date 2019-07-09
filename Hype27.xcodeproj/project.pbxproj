@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		3AFEE72422D4F24100CA9CA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFEE72322D4F24100CA9CA7 /* AppDelegate.swift */; };
-		3AFEE72622D4F24100CA9CA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFEE72522D4F24100CA9CA7 /* ViewController.swift */; };
 		3AFEE72922D4F24100CA9CA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AFEE72722D4F24100CA9CA7 /* Main.storyboard */; };
 		3AFEE72B22D4F24200CA9CA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AFEE72A22D4F24200CA9CA7 /* Assets.xcassets */; };
 		3AFEE72E22D4F24200CA9CA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AFEE72C22D4F24200CA9CA7 /* LaunchScreen.storyboard */; };
+		3AFEE73722D4F7D900CA9CA7 /* HypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFEE73622D4F7D900CA9CA7 /* HypeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3AFEE72022D4F24100CA9CA7 /* Hype27.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hype27.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AFEE72322D4F24100CA9CA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3AFEE72522D4F24100CA9CA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3AFEE72822D4F24100CA9CA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3AFEE72A22D4F24200CA9CA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AFEE72D22D4F24200CA9CA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AFEE72F22D4F24200CA9CA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AFEE73622D4F7D900CA9CA7 /* HypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +54,38 @@
 		3AFEE72222D4F24100CA9CA7 /* Hype27 */ = {
 			isa = PBXGroup;
 			children = (
-				3AFEE72322D4F24100CA9CA7 /* AppDelegate.swift */,
-				3AFEE72522D4F24100CA9CA7 /* ViewController.swift */,
+				3AFEE73822D4F7DD00CA9CA7 /* Controllers */,
+				3AFEE73522D4F71B00CA9CA7 /* Resources */,
 				3AFEE72722D4F24100CA9CA7 /* Main.storyboard */,
+			);
+			path = Hype27;
+			sourceTree = "<group>";
+		};
+		3AFEE73522D4F71B00CA9CA7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3AFEE72322D4F24100CA9CA7 /* AppDelegate.swift */,
 				3AFEE72A22D4F24200CA9CA7 /* Assets.xcassets */,
 				3AFEE72C22D4F24200CA9CA7 /* LaunchScreen.storyboard */,
 				3AFEE72F22D4F24200CA9CA7 /* Info.plist */,
 			);
-			path = Hype27;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3AFEE73822D4F7DD00CA9CA7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3AFEE73922D4F7E800CA9CA7 /* View Controllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3AFEE73922D4F7E800CA9CA7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3AFEE73622D4F7D900CA9CA7 /* HypeTableViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AFEE72622D4F24100CA9CA7 /* ViewController.swift in Sources */,
 				3AFEE72422D4F24100CA9CA7 /* AppDelegate.swift in Sources */,
+				3AFEE73722D4F7D900CA9CA7 /* HypeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +308,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49NKW8MQX9;
-				INFOPLIST_FILE = Hype27/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Hype27/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +326,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49NKW8MQX9;
-				INFOPLIST_FILE = Hype27/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Hype27/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
