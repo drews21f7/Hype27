@@ -20,7 +20,7 @@ class Hype {
     let hypeText: String
     let timestamp: Date
     
-    init(hypeText: String, timestamp: Date) {
+    init(hypeText: String, timestamp: Date = Date()) {
         self.hypeText = hypeText
         self.timestamp = timestamp
         
