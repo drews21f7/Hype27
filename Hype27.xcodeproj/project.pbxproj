@@ -10,6 +10,7 @@
 		3A8B96B622D4F9B600B3203C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8B96B522D4F9B600B3203C /* CloudKit.framework */; };
 		3A8B96B822D4F9F800B3203C /* Hype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B96B722D4F9F800B3203C /* Hype.swift */; };
 		3A8B96BC22D5002700B3203C /* HypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B96BB22D5002700B3203C /* HypeController.swift */; };
+		3A8B96BE22D5112600B3203C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B96BD22D5112600B3203C /* DateExtension.swift */; };
 		3AFEE72422D4F24100CA9CA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFEE72322D4F24100CA9CA7 /* AppDelegate.swift */; };
 		3AFEE72922D4F24100CA9CA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AFEE72722D4F24100CA9CA7 /* Main.storyboard */; };
 		3AFEE72B22D4F24200CA9CA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AFEE72A22D4F24200CA9CA7 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		3A8B96B522D4F9B600B3203C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		3A8B96B722D4F9F800B3203C /* Hype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hype.swift; sourceTree = "<group>"; };
 		3A8B96BB22D5002700B3203C /* HypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypeController.swift; sourceTree = "<group>"; };
+		3A8B96BD22D5112600B3203C /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		3AFEE72022D4F24100CA9CA7 /* Hype27.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hype27.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AFEE72322D4F24100CA9CA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AFEE72822D4F24100CA9CA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				3A8B96BA22D5001800B3203C /* Model Controller */,
 				3AFEE73922D4F7E800CA9CA7 /* View Controllers */,
+				3A8B96BD22D5112600B3203C /* DateExtension.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AFEE72422D4F24100CA9CA7 /* AppDelegate.swift in Sources */,
+				3A8B96BE22D5112600B3203C /* DateExtension.swift in Sources */,
 				3A8B96BC22D5002700B3203C /* HypeController.swift in Sources */,
 				3AFEE73722D4F7D900CA9CA7 /* HypeTableViewController.swift in Sources */,
 				3A8B96B822D4F9F800B3203C /* Hype.swift in Sources */,

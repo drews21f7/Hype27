@@ -8,39 +8,76 @@
 
 import UIKit
 
-class HypeTableViewController: UITableViewController {
+class HypeTableViewController: UITableViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        loadData()
+    }
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+        presentAddHypeAlert()
+    }
+    func presentAddHypeAlert() {
+        let alertController = UIAlertController(title: "Get Hype", message: "What is hype may never die", preferredStyle: .alert)
+        
+        alertController.addTextField { (textField) -> Void in
+            textField.placeholder = "Hype has a limit of 45 characters."
+            textField.autocorrectionType = .yes
+            textField.autocapitalizationType = .sentences
+            textField.delegate = self
+        }
+        let addHypeAction = UIAlertAction(title: "Send", style: .default) { (_) in
+            guard let hypeText = alertController.textFields?.first?.text else {return}
+            if hypeText != "" {
+                HypeController.sharedInstance.saveHype(with: hypeText, completion: { (success) in
+                    if success {
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                })
+            }
+        }
+        let cancelAction = UIAlertAction(title:"Cancel", style: .destructive)
+        
+        alertController.addAction(addHypeAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    //Helper function
+    
+    func loadData() {
+        HypeController.sharedInstance.fetchDemHypes { (success) in
+            if success {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return HypeController.sharedInstance.hypes.count
     }
 
-    /*
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "hypeCell", for: indexPath)
+        
+        let hype = HypeController.sharedInstance.hypes[indexPath.row]
+        cell.textLabel?.text = hype.hypeText
+        cell.detailTextLabel?.text = hype.timestamp.formatDate()
 
         // Configure the cell...
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
